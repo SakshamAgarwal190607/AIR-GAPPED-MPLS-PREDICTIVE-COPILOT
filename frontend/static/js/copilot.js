@@ -1,32 +1,49 @@
 function sendMessage(){
 
-    let input =
-    document.getElementById("user-input");
+let input =
+document.getElementById("userInput");
 
-    let chat =
-    document.getElementById("chat-box");
+let chat =
+document.getElementById("chatArea");
 
-    let message =
-    input.value;
+let text = input.value;
 
-    if(message === ""){
-        return;
-    }
+if(text==="") return;
 
-    chat.innerHTML += `
-        <div class="user-msg">
-            ${message}
-        </div>
-    `;
+chat.innerHTML += `
+<div class="user">
+${text}
+</div>
+`;
 
-    chat.innerHTML += `
-        <div class="bot-msg">
-            Analyzing Network Logs...
-        </div>
-    `;
+setTimeout(()=>{
 
-    input.value = "";
+chat.innerHTML += `
+<div class="bot">
 
-    chat.scrollTop =
-    chat.scrollHeight;
+Risk is HIGH because:
+
+• CPU Usage = 95%
+
+• Latency = 180ms
+
+• Packet Loss = 4%
+
+Recommended Action:
+
+1. Investigate Router R1
+
+2. Enable Load Balancing
+
+3. Reduce MPLS Congestion
+
+</div>
+`;
+
+chat.scrollTop =
+chat.scrollHeight;
+
+},500);
+
+input.value="";
 }

@@ -1,170 +1,122 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
 body{
-
-background:#081229;
-
-color:white;
-
-min-height:100vh;
-}
-
-nav{
-
-height:70px;
-
-display:flex;
-
-align-items:center;
-
-padding-left:40px;
-
-background:#0f1f42;
-
-box-shadow:0 0 20px rgba(255,123,0,0.2);
-}
-
-.logo{
-
-font-size:28px;
-
-font-weight:bold;
-
-color:#ff7b00;
+    margin:0;
+    font-family:Segoe UI;
+    background:#08142e;
+    color:white;
 }
 
 .container{
-
-padding:40px;
+    width:90%;
+    margin:auto;
+    padding:20px;
 }
 
-h1{
+header{
+    text-align:center;
+    margin-bottom:30px;
+}
 
-margin-bottom:30px;
+header h1{
+    color:#00bfff;
+    font-size:45px;
 }
 
 .cards{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:25px;
-
-margin-bottom:30px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
 .card{
-
-background:#102552;
-
-padding:25px;
-
-border-radius:15px;
-
-text-align:center;
-
-box-shadow:0 0 15px rgba(255,123,0,0.15);
-}
-
-.card h3{
-
-margin-bottom:10px;
-
-color:#cfd8dc;
+    background:#10254d;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    border:1px solid #00bfff;
 }
 
 .card h2{
-
-font-size:35px;
-
-color:#ff7b00;
+    color:#00d4ff;
 }
 
 .risk-box{
-
-background:#102552;
-
-padding:30px;
-
-border-radius:15px;
-
-text-align:center;
-
-margin-bottom:30px;
-
-box-shadow:0 0 20px rgba(255,123,0,0.25);
-}
-
-.risk{
-
-font-size:60px;
-
-color:red;
-
-margin:10px 0;
-}
-
-.graph-container{
-
-background:#102552;
-
-padding:25px;
-
-border-radius:15px;
-
-margin-bottom:30px;
-}
-
-.reason-btn{
-
-padding:15px 40px;
-
-font-size:16px;
-
-border:none;
-
-border-radius:10px;
-
-cursor:pointer;
-
-background:#ff7b00;
-
-color:white;
-
-transition:0.3s;
-}
-
-.reason-btn:hover{
-
-transform:translateY(-3px);
-
-background:#ff9500;
-}
-.copilot-section{
-    margin-top:40px;
     text-align:center;
+    margin-top:40px;
+}
+
+.circle{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    margin:auto;
+    border:10px solid #00bfff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:40px;
+    font-weight:bold;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:40px;
+}
+
+.panel{
+    background:#10254d;
+    padding:20px;
+    border-radius:15px;
+}
+
+.panel h2{
+    color:#00d4ff;
+}
+
+.panel ul{
+    line-height:2;
+}
+
+.charts{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:40px;
+}
+
+.chart-box{
+    background:#10254d;
+    padding:20px;
+    border-radius:15px;
+}
+
+.timeline{
+    background:#10254d;
+    padding:20px;
+    border-radius:15px;
+    margin-top:40px;
+}
+
+.timeline h2{
+    color:#00d4ff;
 }
 
 .copilot-btn{
-    display:inline-block;
-    padding:15px 35px;
-    background:linear-gradient(135deg,#ff7b00,#ffae00);
-    color:white;
-    text-decoration:none;
-    font-size:18px;
-    font-weight:bold;
-    border-radius:12px;
-    transition:0.3s;
-    box-shadow:0 0 20px rgba(255,123,0,0.5);
-}
+    position:fixed;
+    right:30px;
+    bottom:30px;
 
-.copilot-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 0 30px rgba(255,123,0,0.8);
+    background:#00bfff;
+    color:white;
+
+    padding:15px 25px;
+    border-radius:50px;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    box-shadow:0 0 20px #00bfff;
 }

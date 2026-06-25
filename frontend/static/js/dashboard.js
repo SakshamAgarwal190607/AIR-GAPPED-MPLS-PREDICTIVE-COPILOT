@@ -1,49 +1,25 @@
-const ctx = document.getElementById('cpuChart');
+const cpuChart = document.getElementById("cpuChart");
 
-new Chart(ctx, {
+new Chart(cpuChart, {
+    type: "line",
+    data: {
+        labels: ["1","2","3","4","5","6"],
+        datasets: [{
+            label: "CPU Usage",
+            data: [50,60,70,75,80,90]
+        }]
+    }
+});
 
-type: 'line',
+const latencyChart = document.getElementById("latencyChart");
 
-data: {
-
-labels: [
-
-'10:00',
-'10:05',
-'10:10',
-'10:15',
-'10:20',
-'10:25',
-'10:30',
-'10:35'
-
-],
-
-datasets: [{
-
-label: 'CPU Usage',
-
-data: [
-
-31,
-35,
-42,
-55,
-70,
-82,
-92,
-97
-
-]
-
-}]
-
-},
-
-options: {
-
-responsive:true
-
-}
-
+new Chart(latencyChart, {
+    type: "line",
+    data: {
+        labels: ["1","2","3","4","5","6"],
+        datasets: [{
+            label: "Latency",
+            data: [20,30,50,70,90,150]
+        }]
+    }
 });

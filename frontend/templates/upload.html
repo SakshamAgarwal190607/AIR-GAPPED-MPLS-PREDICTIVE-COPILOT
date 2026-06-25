@@ -1,48 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlphaCopilot</title>
 
-   <link rel="stylesheet"
-href="{{ url_for('static', filename='css/upload.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
 </head>
+
 <body>
 
-<div class="container">
+    <div class="background"></div>
 
-    <div class="card">
+    <div class="container">
 
-        <h1>🚀 AlphaCopilot</h1>
+        <div class="logo-section">
 
-        <p class="subtitle">
-            Air-Gapped Predictive Copilot for MPLS Network Operations
-        </p>
+            <h1>ALPHA<span>COPILOT</span></h1>
 
-        <form action="/dashboard" method="POST" enctype="multipart/form-data">
+            <p>
+                AI Powered Air-Gapped MPLS Predictive Maintenance System
+            </p>
 
-            <div class="upload-box">
+        </div>
 
-                <h3>Upload Network Log</h3>
+        <div class="upload-card">
 
-                <p>Supported Formats: CSV, TXT, LOG</p>
-
-                <input type="file" name="logfile" id="fileInput">
-
+            <div class="icon">
+                🤖
             </div>
 
-            <button type="submit" class="btn">
-                Analyze Network
-            </button>
+            <h2>Upload Network Logs</h2>
 
-        </form>
+            <p>
+                Upload MPLS / SD-WAN / NOC Logs
+            </p>
+
+            <form action="/dashboard" method="POST">
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".csv,.txt,.log"
+                >
+
+                <label for="fileInput" class="upload-btn">
+                    Select Log File
+                </label>
+
+                <p id="fileName">
+                    No file selected
+                </p>
+
+                <button type="submit" class="analyze-btn">
+                    Analyze Network
+                </button>
+
+            </form>
+
+        </div>
 
     </div>
 
-</div>
-
-<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
 
 </body>
+
 </html>

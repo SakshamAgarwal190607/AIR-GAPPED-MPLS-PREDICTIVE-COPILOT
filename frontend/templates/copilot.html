@@ -1,44 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Alpha Copilot</title>
-    <link rel="stylesheet"
-    href="{{ url_for('static', filename='css/copilot.css') }}">
+
+<title>AlphaCopilot</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/copilot.css') }}">
+
+<script defer
+src="{{ url_for('static', filename='js/copilot.js') }}"></script>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="app">
 
-    <h1>🤖 Alpha Copilot</h1>
+    <div class="sidebar">
 
-    <div class="chat-box" id="chat-box">
+        <h2>🚀 AlphaCopilot</h2>
 
-        <div class="bot-msg">
-            Hello Network Engineer 👋
-            <br>
-            How can I help you today?
+        <button class="new-chat">
+            + New Analysis
+        </button>
+
+        <div class="history">
+
+            <h3>Recent Chats</h3>
+
+            <div class="item">Risk Analysis</div>
+            <div class="item">CPU Spike</div>
+            <div class="item">Packet Loss</div>
+            <div class="item">Latency Issue</div>
+
         </div>
 
     </div>
 
-    <div class="input-area">
+    <div class="main">
 
-        <input
-        type="text"
-        id="user-input"
-        placeholder="Ask about network issue...">
+        <div class="topbar">
 
-        <button onclick="sendMessage()">
-            Send
-        </button>
+            <h1>🤖 AlphaCopilot</h1>
+
+            <span class="status">
+                ● Online
+            </span>
+
+        </div>
+
+        <div class="chat-area" id="chatArea">
+
+            <div class="bot">
+
+                Hello Engineer 👋
+
+                Upload logs and ask me
+                about MPLS network health.
+
+            </div>
+
+        </div>
+
+        <div class="input-box">
+
+            <input
+            id="userInput"
+            placeholder="Ask AlphaCopilot...">
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
 
     </div>
 
 </div>
-
-<script src="{{ url_for('static',
-filename='js/copilot.js') }}"></script>
 
 </body>
 </html>

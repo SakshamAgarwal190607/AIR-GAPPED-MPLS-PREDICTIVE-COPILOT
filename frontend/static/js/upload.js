@@ -1,11 +1,18 @@
-const fileInput = document.getElementById("fileInput");
+const fileInput =
+document.getElementById("fileInput");
 
-fileInput.addEventListener("change", () => {
+const fileName =
+document.getElementById("fileName");
 
-    const file = fileInput.files[0];
+fileInput.addEventListener(
+"change",
+function(){
 
-    if(file){
-        console.log("Selected File:", file.name);
+    if(this.files.length>0){
+
+        fileName.innerText =
+        this.files[0].name;
+
     }
 
 });

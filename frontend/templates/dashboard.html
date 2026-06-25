@@ -1,66 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Alpha Copilot Dashboard</title>
+    <title>AlphaCopilot Dashboard</title>
+    
 
-    <!-- CSS -->
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/dashboard.css') }}">
+    href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <script defer
+    src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>ALPHA COPILOT</h1>
+    <header>
+        <h1>🚀 AlphaCopilot</h1>
+        <p>Predictive MPLS Network Operations Dashboard</p>
+    </header>
 
-        <div class="cards">
+    <!-- KPI CARDS -->
 
-            <div class="card">
-                <h3>CPU Usage</h3>
-                <p>{{ cpu }}%</p>
-            </div>
+    <div class="cards">
 
-            <div class="card">
-                <h3>Latency</h3>
-                <p>{{ latency }} ms</p>
-            </div>
-
-            <div class="card">
-                <h3>Packet Loss</h3>
-                <p>{{ loss }}%</p>
-            </div>
-
-            <div class="card">
-                <h3>Risk Level</h3>
-                <p>{{ risk }}</p>
-            </div>
-
-            <div class="card">
-                <h3>Failure Probability</h3>
-                <p>{{ probability }}%</p>
-            </div>
-
+        <div class="card">
+            <h3>CPU Usage</h3>
+            <h2>{{cpu}}%</h2>
         </div>
 
-        <button onclick="showReason()">
-            View Reasons
-        </button>
-
-        <div id="reasonBox">
-            CPU overload detected.
+        <div class="card">
+            <h3>Latency</h3>
+            <h2>{{latency}} ms</h2>
         </div>
-        
-        <div class="copilot-section">
-            <a href="/copilot" class="copilot-btn">
-                🤖 Open Alpha Copilot
-            </a>
+
+        <div class="card">
+            <h3>Packet Loss</h3>
+            <h2>{{loss}}%</h2>
+        </div>
+
+        <div class="card">
+            <h3>Risk</h3>
+            <h2>{{risk}}</h2>
         </div>
 
     </div>
 
-    <!-- JS -->
-    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+    <!-- RISK METER -->
+
+    <div class="risk-box">
+
+        <h2>Failure Probability</h2>
+
+        <div class="circle">
+
+            <span>{{probability}}%</span>
+
+        </div>
+
+        <h3>{{risk}} RISK</h3>
+
+    </div>
+
+    <!-- ROOT CAUSE + RECOMMENDATION -->
+
+    <div class="grid">
+
+        <div class="panel">
+
+            <h2>Root Cause Analysis</h2>
+
+            <ul>
+                <li>⚠ High CPU Utilization</li>
+                <li>⚠ MPLS Congestion</li>
+                <li>⚠ Latency Spike</li>
+                <li>⚠ Packet Loss Detected</li>
+            </ul>
+
+        </div>
+
+        <div class="panel">
+
+            <h2>AI Recommendation</h2>
+
+            <ul>
+                <li>✅ Investigate Router R1</li>
+                <li>✅ Enable Load Balancing</li>
+                <li>✅ Reroute Traffic</li>
+                <li>✅ Schedule Maintenance</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- CHARTS -->
+
+    <div class="charts">
+
+        <div class="chart-box">
+            <canvas id="cpuChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <canvas id="latencyChart"></canvas>
+        </div>
+
+    </div>
+
+    <!-- INCIDENT TIMELINE -->
+
+    <div class="timeline">
+
+        <h2>Incident Timeline</h2>
+
+        <p>12:01 PM → CPU crossed threshold</p>
+        <p>12:03 PM → Latency increased</p>
+        <p>12:05 PM → Packet Loss detected</p>
+        <p>12:07 PM → High Risk predicted</p>
+
+    </div>
+
+</div>
+
+<!-- COPILOT BUTTON -->
+
+<a href="/copilot" class="copilot-btn">
+    🤖 AlphaCopilot
+</a>
 
 </body>
 </html>
