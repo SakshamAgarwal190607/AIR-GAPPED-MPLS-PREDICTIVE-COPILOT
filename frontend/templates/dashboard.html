@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alpha Copilot Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>ALPHA COPILOT</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>CPU Usage</h3>
+                <p>{{ cpu }}%</p>
+            </div>
+
+            <div class="card">
+                <h3>Latency</h3>
+                <p>{{ latency }} ms</p>
+            </div>
+
+            <div class="card">
+                <h3>Packet Loss</h3>
+                <p>{{ loss }}%</p>
+            </div>
+
+            <div class="card">
+                <h3>Risk Level</h3>
+                <p>{{ risk }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Failure Probability</h3>
+                <p>{{ probability }}%</p>
+            </div>
+
+        </div>
+
+        <button onclick="showReason()">
+            View Reasons
+        </button>
+
+        <div id="reasonBox">
+            CPU overload detected.
+        </div>
+        
+        <div class="copilot-section">
+            <a href="/copilot" class="copilot-btn">
+                🤖 Open Alpha Copilot
+            </a>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+</html>

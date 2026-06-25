@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaCopilot</title>
+
+   <link rel="stylesheet"
+href="{{ url_for('static', filename='css/upload.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🚀 AlphaCopilot</h1>
+
+        <p class="subtitle">
+            Air-Gapped Predictive Copilot for MPLS Network Operations
+        </p>
+
+        <form action="/dashboard" method="POST" enctype="multipart/form-data">
+
+            <div class="upload-box">
+
+                <h3>Upload Network Log</h3>
+
+                <p>Supported Formats: CSV, TXT, LOG</p>
+
+                <input type="file" name="logfile" id="fileInput">
+
+            </div>
+
+            <button type="submit" class="btn">
+                Analyze Network
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+
+</body>
+</html>
