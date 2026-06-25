@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request,session,redirect
 from dashboard import calculate_risk_probability
 
 app = Flask(
@@ -9,8 +9,33 @@ app = Flask(
 
 app.secret_key = "alpha_copilot"
 
+USERNAME = "engineer"
+PASSWORD = "alpha123"
 
 @app.route("/")
+def login():
+    return render_template("login.html")
+
+
+@app.route("/authenticate", methods=["POST"])
+def authenticate():
+
+    username = request.form["username"]
+    password = request.form["password"]
+
+    if username == USERNAME and password == PASSWORD:
+
+        session["user"] = username
+
+        return redirect("/upload")
+
+    return render_template(
+        "login.html",
+        error="Invalid Username or Password"
+    )
+
+
+@app.route("/upload")
 def upload_log():
     return render_template("upload.html")
 
