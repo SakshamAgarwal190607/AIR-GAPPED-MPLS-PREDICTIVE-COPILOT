@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AlphaCopilot</title>
 
@@ -14,67 +18,151 @@ src="{{ url_for('static', filename='js/copilot.js') }}"></script>
 
 <body>
 
-<div class="app">
+<div class="container">
 
-    <div class="sidebar">
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
 
         <h2>🚀 AlphaCopilot</h2>
 
-        <button class="new-chat">
+        <button class="newBtn">
             + New Analysis
         </button>
 
         <div class="history">
 
-            <h3>Recent Chats</h3>
+            <h3>Recent Sessions</h3>
 
-            <div class="item">Risk Analysis</div>
-            <div class="item">CPU Spike</div>
-            <div class="item">Packet Loss</div>
-            <div class="item">Latency Issue</div>
+            <div class="history-item">
+                CPU Spike
+            </div>
+
+            <div class="history-item">
+                MPLS Congestion
+            </div>
+
+            <div class="history-item">
+                Packet Loss
+            </div>
+
+            <div class="history-item">
+                Latency Issue
+            </div>
 
         </div>
 
-    </div>
+    </aside>
 
-    <div class="main">
+    <!-- Main -->
+
+    <main class="main">
 
         <div class="topbar">
 
-            <h1>🤖 AlphaCopilot</h1>
+            <div>
 
-            <span class="status">
-                ● Online
-            </span>
+                <h1>🤖 AlphaCopilot</h1>
+
+                <p>
+                    AI Network Operations Assistant
+                </p>
+
+            </div>
+
+            <div class="status">
+                ● AI Online
+            </div>
 
         </div>
 
-        <div class="chat-area" id="chatArea">
+        <!-- Summary -->
+
+        <div class="summary">
+
+            <div class="card">
+                <h4>Uploaded Log</h4>
+                <p>network_logs.csv</p>
+            </div>
+
+            <div class="card">
+                <h4>Risk</h4>
+                <p class="green">LOW</p>
+            </div>
+
+            <div class="card">
+                <h4>CPU</h4>
+                <p>39%</p>
+            </div>
+
+            <div class="card">
+                <h4>Latency</h4>
+                <p>28 ms</p>
+            </div>
+
+        </div>
+
+        <!-- Quick Actions -->
+
+        <div class="actions">
+
+            <button onclick="quickAction('Analyze Logs')">
+                Analyze Logs
+            </button>
+
+            <button onclick="quickAction('Root Cause')">
+                Root Cause
+            </button>
+
+            <button onclick="quickAction('Recommendations')">
+                Recommendation
+            </button>
+
+            <button onclick="quickAction('Generate Report')">
+                Report
+            </button>
+
+        </div>
+
+        <!-- Chat -->
+
+        <div class="chatArea"
+        id="chatArea">
 
             <div class="bot">
 
-                Hello Engineer 👋
+                👋 Hello Network Engineer!
 
-                Upload logs and ask me
-                about MPLS network health.
+                Upload your logs and ask anything regarding MPLS,
+                SD-WAN,
+                CPU,
+                latency,
+                packet loss,
+                routing,
+                or failures.
 
             </div>
 
         </div>
 
-        <div class="input-box">
+        <!-- Input -->
+
+        <div class="inputArea">
 
             <input
             id="userInput"
             placeholder="Ask AlphaCopilot...">
 
-            <button onclick="sendMessage()">
+            <button
+            onclick="sendMessage()">
+
                 Send
+
             </button>
 
         </div>
 
-    </div>
+    </main>
 
 </div>
 
